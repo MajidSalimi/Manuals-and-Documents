@@ -47,7 +47,7 @@ sudo ./netbeans-8.2-linux.sh
 ```
 Then, installation wizard start. click next...
 Then NetBeans installation should continue. If the installer can’t find where Java JDK is installed, you will have to browse to find it. The default location on Ubuntu is stored at:
-**_/usr/lib/jvm/java-8-oracle_**
+_/usr/lib/jvm/java-8-oracle_
 
 
 After installing, launch the application and begin building Apache Ignite.
