@@ -52,4 +52,21 @@ _/usr/lib/jvm/java-8-oracle_
 
 After installing, launch the application and begin building Apache Ignite.
 
-#### Step 5: Build Apache Ignite
+#### Step 5: Download Apache Ignite Source Code
+Download Source file of Apache Ignite 2.6.0 from: https://github.com/MajidSalimi/ignite
+#### Step 6: Run Apache Ignite Samples
+Start Netbeans and goto: "_File->Open Project_", goto Apache Ignite location and select Apache Ignite source code. 
+Then it will loads the source code of project into netbeans.
+
+
+After that, right click on the source code and choose "_Clean and Build_". It may be encounter with an error but we ignored that.
+
+
+Now you can enjoy running ignite samples!
+
+
+
+
+
+
+
