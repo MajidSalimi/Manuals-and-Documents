@@ -54,15 +54,24 @@ After installing, launch the application and begin building Apache Ignite.
 
 #### Step 5: Download Apache Ignite Source Code
 Download Source file of Apache Ignite 2.6.0 from: https://github.com/MajidSalimi/ignite
-#### Step 6: Run Apache Ignite Samples
-Start Netbeans and goto: "_File->Open Project_", goto Apache Ignite location and select Apache Ignite source code. 
+#### Step 6: Build Apache Ignite 
+Start Netbeans and goto: ```File``` -> ```Open Project```, goto Apache Ignite location and select Apache Ignite source code. 
 Then it will loads the source code of project into netbeans.
 
+It may be encounter with an error, that You need to supply updated Maven to Netbeans instead of built-in version.Fot this purpose, download latest version of maven from: https://maven.apache.org/download.cgi
 
-After that, right click on the source code and choose "_Clean and Build_". It may be encounter with an error but we ignored that.
+
+Then, go to ```Tools``` -> ```Options``` -> ```Java``` pane -> ```Maven``` tab.
+```Maven Home: Browse...```, choose your own downloaded Maven version directory.
 
 
-Now you can enjoy running ignite samples!
+You also need to choose ```[x] Skip tests for builds not related to testing```, otherwise Apache Ignite will not build for you (running all tests takes 24h or so).
+
+Then you can do ```Run``` -> ```Clean and Build Project```, it will build all right.
+
+After that, right click on the source code and choose "_Clean and Build_". 
+
+Now you can enjoy running ignite samples or write your own sample!
 
 
 
