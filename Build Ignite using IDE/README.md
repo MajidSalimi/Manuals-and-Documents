@@ -58,7 +58,7 @@ Download Source file of Apache Ignite 2.6.0 from: https://github.com/MajidSalimi
 Start Netbeans and goto: ```File``` -> ```Open Project```, goto Apache Ignite location and select Apache Ignite source code. 
 Then it will loads the source code of project into netbeans.
 
-It may be encounter with an error, that You need to supply updated Maven to Netbeans instead of built-in version.Fot this purpose, download latest version of maven from: https://maven.apache.org/download.cgi
+It may be encounters with an error, that You need to supply updated Maven to Netbeans instead of built-in version. For this purpose, download latest version of maven from: https://maven.apache.org/download.cgi
 
 
 Then, go to ```Tools``` -> ```Options``` -> ```Java``` pane -> ```Maven``` tab.
