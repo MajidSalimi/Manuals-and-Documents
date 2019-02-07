@@ -1,12 +1,14 @@
 # Git Commands
-### Initial configuration
+
+## Initial configuration
 
     git config --global user.name "username"
     git config --global user.email "mail"
     git config --global colur.ui true
     git config --global core.editor
     
-### Getting & Creating Projects
+    
+## Getting & Creating Projects
 
 Initialize a local Git repository:
 
@@ -16,7 +18,8 @@ Create a local copy of a remote repository:
 
     git clone ssh://git@github.com/[username]/[repository-name].git	
     
-### Basic Snapshotting
+    
+## Basic Snapshotting
 
 Check status:
 
@@ -38,7 +41,8 @@ Remove a file (or folder):
 
     git rm -r [file-name.txt]	
     
-###Branching & Merging
+    
+## Branching & Merging
 
 List branches (the asterisk denotes the current branch):
 
@@ -88,7 +92,8 @@ Merge a branch into a target branch
 
     git merge [source branch] [target branch]
     
-###Sharing & Updating Projects
+    
+## Sharing & Updating Projects
 
 Push a branch to your remote repository:
 
