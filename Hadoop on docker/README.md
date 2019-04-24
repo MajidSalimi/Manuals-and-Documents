@@ -204,5 +204,7 @@ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.4.jar wordco
 
 Now you can check the web-UI in the: hadoop-master:8088 in your browser.
 
-
-
+If you want to copy your own jar file to the container you can use the following command:
+```
+docker cp desiredJarFile.jar ContaineID:/usr/local/hadoop-2.7.4/share/hadoop/mapreduce/desiredJarFile.jar
+```
