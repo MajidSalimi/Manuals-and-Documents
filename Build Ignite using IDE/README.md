@@ -31,7 +31,7 @@ sudo add-apt-repository ppa:natecarlson/maven3
 sudo apt-get update
 sudo apt-get install maven build-essential libgomp1 git
 ```
-#### Step 3: Downloading NetBeans
+#### Step 3: Download NetBeans
 After installing Java JDK to your system, run the commands below to download NetBeans 8.2
 ```
 cd /tmp
