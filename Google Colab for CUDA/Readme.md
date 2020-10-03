@@ -1,7 +1,7 @@
 # How to Use Google Colab to Run CUDA Codes
 In this tutorial, I'm going to provide some tips to run CUDA (C or C++) codes on Google Colab.
 
-For running CUDA codes we need a NVIDIA GPU, but some people don't have access to these GPUs. Fortunately, Google has provided this capability in its Colab, andit is possible to run our CUDA codes on it for free! Follow this tutorial to do so:
+For running CUDA codes we need an NVIDIA GPU, but some people don't have access to these GPUs. Fortunately, Google has provided this capability in its Colab, and it is possible to run our CUDA codes on it for free!
 
 ## Step1
 1. Open your browser and go to https://colab.research.google.com
@@ -13,7 +13,7 @@ For running CUDA codes we need a NVIDIA GPU, but some people don't have access t
 ![Accelerator](https://github.com/MajidSalimi/Manuals-and-Documents/blob/master/Google%20Colab%20for%20CUDA/Capture.JPG)
 
 ## Step2
-Write the following code on a seperate block
+Write the following code in a new block:
 ```
 !apt-get --purge remove cuda nvidia* libnvidia-*
 !dpkg -l | grep cuda- | awk '{print $2}' | xargs -n1 dpkg --purge
@@ -33,7 +33,7 @@ Now, it's time to install CUDA 9. For this purpose, open a new block and copy th
 ```
 
 ## Step4
-After the installation process is finished, you can check your CUDA version by the following command:
+After the installation process is finished, you can check your CUDA version using the following command:
 ```
 !nvcc --version
 ```
@@ -57,4 +57,43 @@ Then, you have to load the plugin. For this purpose, open another new code block
 ```
 
 ## Step6
-It's time to run your CUDA codes on Google Colab
+Now, it's time to run your CUDA code on Google Colab. Open a new code block, write your code in it, and run your code. You can use the following simple CUDA code to test your google colab:
+```
+%%cu
+#include <stdio.h>
+#include <stdlib.h>
+__global__ void add(int *a, int *b, int *c) {
+*c = *a + *b;
+}
+int main() {
+int a, b, c;
+// host copies of variables a, b & c
+int *d_a, *d_b, *d_c;
+// device copies of variables a, b & c
+int size = sizeof(int);
+// Allocate space for device copies of a, b, c
+cudaMalloc((void **)&d_a, size);
+cudaMalloc((void **)&d_b, size);
+cudaMalloc((void **)&d_c, size);
+// Setup input values  
+c = 0;
+a = 3;
+b = 5;
+// Copy inputs to device
+cudaMemcpy(d_a, &a, size, cudaMemcpyHostToDevice);
+  cudaMemcpy(d_b, &b, size, cudaMemcpyHostToDevice);
+// Launch add() kernel on GPU
+add<<<1,1>>>(d_a, d_b, d_c);
+// Copy result back to host
+cudaError err = cudaMemcpy(&c, d_c, size, cudaMemcpyDeviceToHost);
+  if(err!=cudaSuccess) {
+      printf("CUDA error copying to Host: %s\n", cudaGetErrorString(err));
+  }
+printf("result is %d\n",c);
+// Cleanup
+cudaFree(d_a);
+cudaFree(d_b);
+cudaFree(d_c);
+return 0;
+}
+```
