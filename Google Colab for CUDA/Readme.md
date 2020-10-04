@@ -1,5 +1,5 @@
 # How to Use Google Colab to Run CUDA Codes
-In this tutorial, I'm going to provide some tips to run CUDA (C or C++) codes on Google Colab.
+In this tutorial, I'm going to provide some tips to run CUDA (and C/C++) codes on Google Colab.
 
 For running CUDA codes we need an NVIDIA GPU, but some people don't have access to these GPUs. Fortunately, Google has provided this capability in its Colab, and it is possible to run our CUDA codes on it for free!
 
